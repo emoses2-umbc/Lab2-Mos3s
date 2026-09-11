@@ -12,7 +12,8 @@ mov $0, %edx
 fill_loop:
 add %eax, %edx
 inc %eax
-loop fill_loop
+dec %ecx
+jne fill_loop
 
 mov $ram+0x50, %ebx
 mov %edx, (%ebx)
