@@ -1,11 +1,12 @@
 .section .bss
+.blobl ram
 .lcomm ram,256
 
 
 .section .text
-.global _start
+.global fill_ram
 
-_start:
+fill_ram:
 movb $0xFF, ram+0x50
 movb $0xFF, ram+0x51
 movb $0xFF, ram+0x52
@@ -16,6 +17,6 @@ movb $0xFF, ram+0x56
 movb $0xFF, ram+0x57
 movb $0xFF, ram+0x58
 
-mov $1, %eax
-mov $0, %ebx
-int $0x80
+ret
+
+.section .note.GNU-stack,"",@progbits
