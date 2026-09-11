@@ -16,6 +16,6 @@ movb $0xFF, ram+0x56
 movb $0xFF, ram+0x57
 movb $0xFF, ram+0x58
 
-movb $1, %eax
-movb $0, %ebx
+mov $1, %eax
+mov $0, %ebx
 int $0x80
